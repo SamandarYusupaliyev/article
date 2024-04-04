@@ -1,6 +1,5 @@
-import { NavLink } from "react-router-dom"
 import { useFetch } from "../../hooks/useFetch"
-
+import { NavLink } from "react-router-dom"
 function Articles() {
     const { data :articles,isPending,error } =useFetch('http://localhost:3000/articles')
   return (
@@ -17,7 +16,7 @@ function Articles() {
                 Author: <i>{articles.author}</i>
               </p>
 
-              <NavLink to="">Read More</NavLink>
+              <NavLink to={`/articles/${articles.id}`}>Read More</NavLink>
           </div>
         )
        })}
